@@ -1,17 +1,18 @@
 extends ../layout
 
 block content
-  h1= title
-  if errors.errors !== undefined
-    each message in errors.errors
-        p=message
+  div(class='admin-news')
+    h1= title
+    if errors.errors !== undefined
+      each message in errors.errors
+          p=message
 
-  form(method='post')
-    p
-        label Title
-        input(type='text' name='title' value=body.title || '')
-    p
-        label Description
-        textarea(name='description')=body.title || ''
-    p
-        input(type='submit' value='save')
+    form(method='post')
+      p
+          label Title
+          input(type='text' name='title' value=body.title || '')
+      p
+          label Description
+          textarea(name='description')=body.title || ''
+      p
+          input(type='submit' value='save')

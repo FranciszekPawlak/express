@@ -1,5 +1,21 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class='home')
+    h1='Create using Express & Mongoose'
+    h2 Api
+    h4 All news: 
+    p='expressandmongoose.herokuapp.com/api'
+    h4 Sort news: 
+    p='expressandmongoose.herokuapp.com/api?&sort={-1_or_1}'
+    h4 Search news: 
+    p='expressandmongoose.herokuapp.com/api?&search={search_value}'
+    h4 Search by id: 
+    p='expressandmongoose.herokuapp.com/api/{news_id}'
+    h4 Search by id with sort: 
+    p='expressandmongoose.herokuapp.com/api?&search={search_value}?&sort={-1_or_1}'
+    h2 Pass
+    h4 Login:
+    p root
+    h4 Password:
+    p  root

@@ -6,14 +6,12 @@ const password = "root";
 
 /* GET home page. */
 router.get("/", (req, res) => {
-  res.render("index", {
-    title: "Express"
-  });
+  res.render("index");
 });
 
 router.get("/login", (req, res) => {
   res.render("login", {
-    title: "Logowanie"
+    title: "Sing in"
   });
 });
 

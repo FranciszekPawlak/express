@@ -1,12 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  form(method='get')
-    input(type='text' value=search name='search')
-    input(type='submit' value='go')
-  each item in data
-    article
-      h1(class='title')=item.title
-      p(clasee='date')=item.created
-      p(dlass='descripiton')=item.description
+  div(class='news')
+    h1= title
+    form(method='get')
+      input(type='text' value=search name='search')
+      input(type='submit' value='go')
+    div(class='articles-list')
+      each item in data
+        article
+          h1(class='title')=item.title
+          p(dlass='descripiton')=item.description
+          p(clasee='date')=item.created

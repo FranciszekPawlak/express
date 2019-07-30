@@ -1,23 +1,26 @@
 extends layout
 
 block content
-  h1= title
-  if show 
-    form(method='post')
-      p What is your favourite season?
-      ul
-        each item in data
-          li
-            label=item.title
-            input(type='radio' name='quiz' value=item._id)
-      input(type='submit' value='vote')
-      p To show statistics you must vote
-  else 
-    h1 You have already voted
-    p statistics
-    ul
-    each item in data
-      li #{item.title} votes: #{item.vote} (#{Math.round(item.vote/sum*100)}%)
-  p Votes #{sum}
+  div(class='quiz')
+    h1= title
+    div(class='vote-before')
+      if show 
+        p What is your favourite season?
+        form(method='post')
+          ul
+          each item in data
+            li
+              label=item.title
+              input(type='radio' name='quiz' value=item._id)
+              input(type='submit' value='vote')
+        p To show statistics you must vote
+      else 
+        div(class='vote-after')
+          h1 You have already voted
+          p statistics
+          ul
+          each item in data
+            li #{item.title} votes: #{item.vote} (#{Math.round(item.vote/sum*100)}%)
+          p Votes #{sum}
     
 
